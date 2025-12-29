@@ -1,4 +1,9 @@
+import { useWebflowScripts } from '@/hooks/useWebflowScripts';
+
 const Index = () => {
+  // Initialize Webflow scripts and animations
+  useWebflowScripts();
+
   return (
     <div className="page-wrapper">
       <nav className="nav_component">
