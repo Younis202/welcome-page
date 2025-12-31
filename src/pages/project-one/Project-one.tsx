@@ -1,492 +1,205 @@
+import React from 'react';
+
+// ============================================================
+// DATA CONFIGURATIONS
+// ============================================================
+
+const ARTICLE_TAGS = [
+    { label: 'Healthcare' },
+    { label: 'Government Relations' }
+];
+
+const SERVICE_TAGS = [
+    { label: 'Ministerial Access' },
+    { label: 'Market Entry' },
+    { label: 'Strategic Partnership' }
+];
+
+const ABOUT_IMAGES = [
+    {
+        src: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b29cab409c556dcfd37_nashouse-about-1-high.jpg',
+        alt: 'altris ai strategic meeting',
+        width: 635,
+        height: 644
+    },
+    {
+        src: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b53508515b6909d789d_nashouse-about-2-high.jpg',
+        alt: 'altris ai government partnership',
+        width: 635,
+        height: 644
+    }
+];
+
+const SOLUTION_CARDS = [
+    {
+        number: '001',
+        icon: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c57151ca21d031b662d6ea_calender.svg',
+        title: 'Initial Discovery',
+        description: "Start by gathering market objectives to understand the client's expansion aspirations"
+    },
+    {
+        number: '002',
+        icon: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c57150a90a95057f29dba9_person.svg',
+        title: 'Stakeholder Mapping',
+        description: 'Identify key decision-makers to clarify access requirements and gather strategic insights.'
+    },
+    {
+        number: '003',
+        icon: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c57150b4de1911f9b773e8_estimate.svg',
+        title: 'Engagement Strategy',
+        description: "Provide a transparent execution roadmap that outlines milestones and timelines, ensuring alignment with the client's objectives."
+    },
+    {
+        number: '004',
+        icon: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c571504fcf89b38f96ae4c_kickoff.svg',
+        title: 'Access Activation',
+        description: 'Once the client approves the strategy, initiate engagement with a well-defined plan and direct lines of communication.'
+    }
+];
+
+const RELATED_PROJECTS = [
+    {
+        href: '/projects/altris-ai',
+        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c5b848efd444c01860932d_next-project-high.jpg',
+        title: 'Altris AI expand to  MENA markets',
+        isCurrent: true
+    },
+    {
+        href: '/projects/fintech-licensing',
+        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c5b8485b462b3a3a91ebd7_next-project-2-high.jpg',
+        title: 'FinTech Solutions secure  regulatory approval',
+        isCurrent: false
+    }
+];
+
+// ============================================================
+// REUSABLE COMPONENTS
+// ============================================================
+
+const ArticleTag = ({ label }) => (
+    <div className="article_tag display-flex is-left">
+        <div className="article_tag-dot" />
+        <div>{label}</div>
+    </div>
+);
+
+const ServiceTag = ({ label }) => (
+    <div className="service-tag display-flex is-center">
+        <div className="body-l">{label}</div>
+    </div>
+);
+
+const AboutImage = ({ src, alt, width, height }) => (
+    <figure className="about-project_figure position-relative overflow-hidden">
+        <img
+            className="cover-image"
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            loading="lazy"
+            fetchPriority="low"
+            decoding="async"
+        />
+    </figure>
+);
+
+const SolutionCard = ({ number, icon, title, description }) => (
+    <div className="solution_card display-vertical">
+        <div className="solution_card_top display-flex">
+            <div className="solution_card_icon display-flex is-center">
+                <img src={icon} loading="lazy" alt="" />
+            </div>
+            <div className="body-l">{number}</div>
+        </div>
+        <div className="solution_card_content display-vertical">
+            <h3 className="text-color-alternate">{title}</h3>
+            <p className="text-size-regular">{description}</p>
+        </div>
+    </div>
+);
+
+const RelatedProjectItem = ({ href, image, title, isCurrent }) => (
+    <div className="project_single-item">
+        <a
+            href={href}
+            {...(isCurrent && { 'aria-current': 'page' })}
+            className={`project_figure position-relative overflow-hidden w-inline-block${isCurrent ? ' w--current' : ''} is-related`}
+        >
+            <img
+                className="cover-image"
+                src={image}
+                alt="strategic partnership"
+                width={614}
+                height={576}
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
+            />
+        </a>
+        <div className="project_content">
+            <h3 className="heading-style-h2">
+                <div className="display-inline">Wasel unlocked </div>
+                <div className="display-inline text-style-secondary-font">{title}</div>
+            </h3>
+            <div
+                className="is-magnatic"
+                style={{
+                    willChange: "transform",
+                    transform: "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                    transformStyle: "preserve-3d"
+                }}
+            >
+                <a
+                    href={href}
+                    {...(isCurrent && { 'aria-current': 'page' })}
+                    className={`button w-inline-block${isCurrent ? ' w--current' : ''} is-secondary`}
+                >
+                    <div>View case study</div>
+                    <div className="button-hover-bg-two" />
+                </a>
+            </div>
+        </div>
+    </div>
+);
+
+// ============================================================
+// MAIN COMPONENT
+// ============================================================
+
 const ProjectOne = () => {
     return (
         <div className="page-wrapper">
-            <nav className="nav_component">
-                <div className="padding-global">
-                    <div className="container-large">
-                        <div className="nav_wrapper">
-                            <a href="/" className="nav_logo-link w-inline-block">
-                                <img
-                                    src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67ac925dc3a152594b6bcc01_logo.svg"
-                                    loading="eager"
-                                    width={124}
-                                    height={28}
-                                    alt="Omotive Logo"
-                                    className="nav_logo"
-                                />
-                            </a>
-                            <div className="nav_menu-wrapper">
-                                <nav id="main-menu" role="navigation" className="nav_menu">
-                                    <ul role="list" className="nav_list">
-                                        <li className="nav_list-item">
-                                            <a href="/projects" className="nav_link">
-                                                works
-                                            </a>
-                                            <div className="mobile-nav-arrow">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width={14}
-                                                    height={14}
-                                                    viewBox="0 0 14 14"
-                                                    fill="none"
-                                                >
-                                                    <path
-                                                        d="M9.13306 5.69139L4.11237 10.7121L3.28741 9.88712L8.3081 4.86643L3.88303 4.86643L3.88303 3.69994L10.2996 3.69994L10.2996 10.1165L9.13306 10.1165L9.13306 5.69139Z"
-                                                        fill="#10131B"
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </li>
-                                        <li className="nav_list-item">
-                                            <div
-                                                data-hover="true"
-                                                data-delay={0}
-                                                data-w-id="9cf03c1b-9963-f5c9-751d-ff0b100cb4c3"
-                                                className="nav_dropdown w-dropdown"
-                                            >
-                                                <div
-                                                    className="nav_link w-dropdown-toggle"
-                                                    id="w-dropdown-toggle-0"
-                                                    aria-controls="w-dropdown-list-0"
-                                                    aria-haspopup="menu"
-                                                    aria-expanded="false"
-                                                    role="button"
-                                                    tabIndex={0}
-                                                >
-                                                    <a href="/services" className="nav_link is-dropdown">
-                                                        services
-                                                    </a>
-                                                </div>
-                                                <nav
-                                                    className="nav_dropdown-list w-dropdown-list"
-                                                    id="w-dropdown-list-0"
-                                                    aria-labelledby="w-dropdown-toggle-0"
-                                                    style={{
-                                                        transform:
-                                                            "translate3d(0px, 50px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                        transformStyle: "preserve-3d",
-                                                        opacity: 0
-                                                    }}
-                                                >
-                                                    <div className="nav_dropdown-list-inner">
-                                                        <div
-                                                            role="list"
-                                                            className="nav_services_list display-vertical"
-                                                        >
-                                                            <a
-                                                                role="listtiem"
-                                                                href="/sevices/website-design-branding"
-                                                                className="nav_services_list-item is-active w-inline-block"
-                                                                tabIndex={0}
-                                                            >
-                                                                <div>01</div>
-                                                                <div>Website &amp; Branding</div>
-                                                            </a>
-                                                            <a
-                                                                role="listtiem"
-                                                                href="/sevices/mobile-application-design"
-                                                                className="nav_services_list-item w-inline-block"
-                                                                tabIndex={0}
-                                                            >
-                                                                <div>02</div>
-                                                                <div>Mobile Apps</div>
-                                                            </a>
-                                                            <a
-                                                                role="listtiem"
-                                                                href="/sevices/web-application"
-                                                                className="nav_services_list-item w-inline-block"
-                                                                tabIndex={0}
-                                                            >
-                                                                <div>03</div>
-                                                                <div>Web Application</div>
-                                                            </a>
-                                                            <a
-                                                                role="listtiem"
-                                                                href="/sevices/webflow-development"
-                                                                className="nav_services_list-item w-inline-block"
-                                                                tabIndex={0}
-                                                            >
-                                                                <div>04</div>
-                                                                <div>Webflow Developement</div>
-                                                            </a>
-                                                        </div>
-                                                        <div className="nav_services_media">
-                                                            <img
-                                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67adfa1f0bf9c103b13afa27_dropdown-service.jpg"
-                                                                loading="lazy"
-                                                                alt="A computer monitor sitting on top of a rock."
-                                                                className="nav_service_image is-active"
-                                                            />
-                                                            <img
-                                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d705308d1c3060ecb7eb16_dropdown-Mobile%20Apps.jpg"
-                                                                loading="lazy"
-                                                                alt=""
-                                                                className="nav_service_image"
-                                                            />
-                                                            <img
-                                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d70549c5c4b283a4831d4e_dropdown-web-application.jpg"
-                                                                loading="lazy"
-                                                                alt=""
-                                                                className="nav_service_image"
-                                                            />
-                                                            <img
-                                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d7054ab1eecae2159d6173_dropdown-webflow.jpg"
-                                                                loading="lazy"
-                                                                alt=""
-                                                                className="nav_service_image"
-                                                            />
-                                                        </div>
-                                                        <div className="nav_services_content">
-                                                            <div className="nav_services_content-inner is-active">
-                                                                <div className="margin-bottom margin-medium text-weight-medium">
-                                                                    Service
-                                                                </div>
-                                                                <div className="margin-bottom margin-small">
-                                                                    <div className="nav_service_title body-xl text-color-primary">
-                                                                        Website &amp; Branding
-                                                                    </div>
-                                                                </div>
-                                                                <p className="nav_service_subtext">
-                                                                    Delivering user-centric solutions that combine
-                                                                    creativity with strategy to drive business growth
-                                                                </p>
-                                                            </div>
-                                                            <div className="nav_services_content-inner">
-                                                                <div className="margin-bottom margin-medium text-weight-medium">
-                                                                    Service
-                                                                </div>
-                                                                <div className="margin-bottom margin-small">
-                                                                    <div className="nav_service_title body-xl text-color-primary">
-                                                                        Mobile Apps
-                                                                    </div>
-                                                                </div>
-                                                                <p className="nav_service_subtext">
-                                                                    Delivering user-centric solutions that combine
-                                                                    creativity with strategy to drive business growth
-                                                                </p>
-                                                            </div>
-                                                            <div className="nav_services_content-inner">
-                                                                <div className="margin-bottom margin-medium text-weight-medium">
-                                                                    Service
-                                                                </div>
-                                                                <div className="margin-bottom margin-small">
-                                                                    <div className="nav_service_title body-xl text-color-primary">
-                                                                        Web Application
-                                                                    </div>
-                                                                </div>
-                                                                <p className="nav_service_subtext">
-                                                                    Delivering user-centric solutions that combine
-                                                                    creativity with strategy to drive business growth
-                                                                </p>
-                                                            </div>
-                                                            <div className="nav_services_content-inner">
-                                                                <div className="margin-bottom margin-medium text-weight-medium">
-                                                                    Service
-                                                                </div>
-                                                                <div className="margin-bottom margin-small">
-                                                                    <div className="nav_service_title body-xl text-color-primary">
-                                                                        Webflow Development
-                                                                    </div>
-                                                                </div>
-                                                                <p className="nav_service_subtext">
-                                                                    Delivering user-centric solutions that combine
-                                                                    creativity with strategy to drive business growth
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </nav>
-                                            </div>
-                                            <div className="mobile-nav-arrow">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width={14}
-                                                    height={14}
-                                                    viewBox="0 0 14 14"
-                                                    fill="none"
-                                                >
-                                                    <path
-                                                        d="M9.13306 5.69139L4.11237 10.7121L3.28741 9.88712L8.3081 4.86643L3.88303 4.86643L3.88303 3.69994L10.2996 3.69994L10.2996 10.1165L9.13306 10.1165L9.13306 5.69139Z"
-                                                        fill="#10131B"
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </li>
-                                        <li className="nav_list-item">
-                                            <a href="/about" className="nav_link">
-                                                About
-                                            </a>
-                                            <div className="mobile-nav-arrow">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width={14}
-                                                    height={14}
-                                                    viewBox="0 0 14 14"
-                                                    fill="none"
-                                                >
-                                                    <path
-                                                        d="M9.13306 5.69139L4.11237 10.7121L3.28741 9.88712L8.3081 4.86643L3.88303 4.86643L3.88303 3.69994L10.2996 3.69994L10.2996 10.1165L9.13306 10.1165L9.13306 5.69139Z"
-                                                        fill="#10131B"
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <div
-                                    className="nav_button is-magnatic"
-                                    style={{
-                                        willChange: "transform",
-                                        transform:
-                                            "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                        transformStyle: "preserve-3d"
-                                    }}
-                                >
-                                    <a
-                                        data-w-id="8bb02b6a-0dfa-c39d-4ebf-2f7056810763"
-                                        href="/contact"
-                                        className="button is-small w-inline-block is-small"
-                                    >
-                                        <div className="button-text">Let's chat</div>
-                                        <div
-                                            className="button-hover-bg"
-                                            style={{
-                                                transform:
-                                                    "translate3d(0px, 130%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                transformStyle: "preserve-3d"
-                                            }}
-                                        ></div>
-                                    </a>
-                                </div>
-                            </div>
-                            <button
-                                type="button"
-                                role="button"
-                                aria-haspopup="true"
-                                aria-controls="main-menu"
-                                aria-label="Open Menu"
-                                className="nav_menu-button"
-                            >
-                                <span className="nav_menu-bar cc-top" />
-                                <span className="nav_menu-bar cc-middle" />
-                                <span className="nav_menu-bar cc-bottom" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <nav className="mobile-menu-wrapper">
-                    <div className="mobile-menu_content">
-                        <div role="list" className="mobile-menu_list">
-                            <a
-                                role="listitem"
-                                href="/projects"
-                                className="mobile-menu_list_item w-inline-block"
-                            >
-                                <div className="mobile-menu_link heading-style-h3 text-weight-medium">
-                                    Projects
-                                </div>
-                                <div className="mobile-menu_arrow display-flex is-center position-relative overflow-hidden">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={14}
-                                        height={14}
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M9.13306 5.69139L4.11237 10.7121L3.28741 9.88712L8.3081 4.86643L3.88303 4.86643L3.88303 3.69994L10.2996 3.69994L10.2996 10.1165L9.13306 10.1165L9.13306 5.69139Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <div
-                                        gradient={1}
-                                        className="mobile-menu_gradient position-absolute z-index-n1 pointer-events-none"
-                                    />
-                                </div>
-                            </a>
-                            <a
-                                role="listitem"
-                                href="/services"
-                                className="mobile-menu_list_item w-inline-block"
-                            >
-                                <div className="mobile-menu_link heading-style-h3 text-weight-medium">
-                                    Services
-                                </div>
-                                <div className="mobile-menu_arrow display-flex is-center position-relative overflow-hidden">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={14}
-                                        height={14}
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M9.13306 5.69139L4.11237 10.7121L3.28741 9.88712L8.3081 4.86643L3.88303 4.86643L3.88303 3.69994L10.2996 3.69994L10.2996 10.1165L9.13306 10.1165L9.13306 5.69139Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <div
-                                        gradient={1}
-                                        className="mobile-menu_gradient position-absolute z-index-n1 pointer-events-none"
-                                    />
-                                </div>
-                            </a>
-                            <a
-                                role="listitem"
-                                href="/about"
-                                className="mobile-menu_list_item w-inline-block"
-                            >
-                                <div className="mobile-menu_link heading-style-h3 text-weight-medium">
-                                    About Us
-                                </div>
-                                <div className="mobile-menu_arrow display-flex is-center position-relative overflow-hidden">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={14}
-                                        height={14}
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                    >
-                                        <path
-                                            d="M9.13306 5.69139L4.11237 10.7121L3.28741 9.88712L8.3081 4.86643L3.88303 4.86643L3.88303 3.69994L10.2996 3.69994L10.2996 10.1165L9.13306 10.1165L9.13306 5.69139Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                    <div
-                                        gradient={1}
-                                        className="mobile-menu_gradient position-absolute z-index-n1 pointer-events-none"
-                                    />
-                                </div>
-                            </a>
-                        </div>
-                        <a
-                            data-w-id="8bb02b6a-0dfa-c39d-4ebf-2f7056810763"
-                            href="/contact"
-                            className="button is-small w-inline-block"
-                        >
-                            <div className="button-text">Contact us</div>
-                            <div
-                                className="button-hover-bg"
-                                style={{
-                                    transform:
-                                        "translate3d(0px, 130%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                    transformStyle: "preserve-3d"
-                                }}
-                            ></div>
-                        </a>
-                        <div className="mobile-menu_bottom display-vertical">
-                            <div>
-                                <div className="margin-bottom margin-small">
-                                    <div className="body-xl text-color-secondary">Get in touch</div>
-                                </div>
-                                <a
-                                    href="#"
-                                    className="copy-email-wrapper copy-parent is-mobile w-inline-block"
-                                >
-                                    <div id="textToCopy" className="footer_cta_text">
-                                        mufidul@omotive.co
-                                    </div>
-                                    <div className="copy-button is-two display-vertical  is-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 25 24"
-                                            fill="none"
-                                            className="copy-button-icon is-two"
-                                        >
-                                            <path
-                                                d="M16.5 12.9V17.1C16.5 20.6 15.1 22 11.6 22H7.4C3.9 22 2.5 20.6 2.5 17.1V12.9C2.5 9.4 3.9 8 7.4 8H11.6C15.1 8 16.5 9.4 16.5 12.9Z"
-                                                stroke="currentColor"
-                                                strokeWidth="1.5"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                            <path
-                                                d="M22.5 6.9V11.1C22.5 14.6 21.1 16 17.6 16H16.5V12.9C16.5 9.4 15.1 8 11.6 8H8.5V6.9C8.5 3.4 9.9 2 13.4 2H17.6C21.1 2 22.5 3.4 22.5 6.9Z"
-                                                stroke="currentColor"
-                                                strokeWidth="1.5"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                        <div gradient={1} className="copy-button-overlay" />
-                                    </div>
-                                    <div gradient={1} className="copy-result">
-                                        <div>copied!</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="mobile-menu_social display-vertical">
-                                <div className="heading-style-h3">Socials</div>
-                                <div className="mobile-menu_social_links display-flex is-left">
-                                    <a
-                                        href="https://dribbble.com/designopsagency"
-                                        target="_blank"
-                                        className="mobile-menu_social_link w-inline-block"
-                                    >
-                                        <div>Dribble</div>
-                                    </a>
-                                    <a
-                                        href="https://www.behance.net/designopsagency"
-                                        target="_blank"
-                                        className="mobile-menu_social_link w-inline-block"
-                                    >
-                                        <div>Behance</div>
-                                    </a>
-                                    <a
-                                        href="https://www.linkedin.com/company/omotive-agency/?viewAsMember=true"
-                                        target="_blank"
-                                        className="mobile-menu_social_link w-inline-block"
-                                    >
-                                        <div>Linkedin</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </nav>
             <main className="main-wrapper">
+                {/* Project Details Header */}
                 <section className="section_project-details-header">
                     <div className="padding-global">
                         <div className="container-large">
                             <div className="project-details-header_content display-flex">
                                 <div className="project-details_content_left display-vertical">
                                     <div className="article_tag-wrapper display-flex">
-                                        <div className="article_tag display-flex is-left">
-                                            <div className="article_tag-dot" />
-                                            <div>Product</div>
-                                        </div>
-                                        <div className="article_tag display-flex is-left">
-                                            <div className="article_tag-dot" />
-                                            <div>UI UX Design</div>
-                                        </div>
+                                        {ARTICLE_TAGS.map((tag, index) => (
+                                            <ArticleTag key={index} {...tag} />
+                                        ))}
                                     </div>
                                     <h1 className="project-details_title">
-                                        Omotive helped{" "}
-                                        <span className="text-style-secondary-font">Nashouse</span> to{" "}
-                                        <span className="text-style-secondary-font">redesign</span>{" "}
-                                        their&nbsp;&nbsp;full website
+                                        Wasel unlocked{" "}
+                                        <span className="text-style-secondary-font">Altris AI</span> strategic{" "}
+                                        <span className="text-style-secondary-font">market access</span>{" "}
+                                        across&nbsp;&nbsp;MENA region
                                     </h1>
                                 </div>
                                 <div className="project-details_content_right display-vertical">
                                     <p className="project-details-header_text body-l">
-                                        We offer a comprehensive service, including branding design, web
-                                        design, and UI/UX design, to create a cohesive online presence
-                                        for our clients.
+                                        We delivered comprehensive execution, including ministerial access, market entry coordination, and strategic partnership facilitation, to create accelerated regional presence for our client.
                                     </p>
                                     <div className="heading-style-h2">
-                                        Our <span className="text-style-secondary-font">service</span>
+                                        Our <span className="text-style-secondary-font">solution</span>
                                     </div>
                                     <div className="service-tag_wrapper display-flex is-left">
-                                        <div className="service-tag display-flex is-center">
-                                            <div className="body-l">Branding design</div>
-                                        </div>
-                                        <div className="service-tag display-flex is-center">
-                                            <div className="body-l">Web Design</div>
-                                        </div>
-                                        <div className="service-tag display-flex is-center">
-                                            <div className="body-l">UI/UX Design</div>
-                                        </div>
+                                        {SERVICE_TAGS.map((tag, index) => (
+                                            <ServiceTag key={index} {...tag} />
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -494,60 +207,40 @@ const ProjectOne = () => {
                                 <img
                                     className="cover-image"
                                     src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63aa16449d54242ee2e26_nashouse-header-high-min.jpg"
-                                    alt="Nashouse header mockup"
+                                    alt="Altris AI strategic partnership"
                                     width={1290}
                                     height={644}
                                     loading="eager"
-                                    fetchpriority="high"
+                                    fetchPriority="high"
                                     decoding="sync"
                                 />
                             </figure>
                         </div>
                     </div>
                 </section>
+
+                {/* About Project Section */}
                 <section className="section_about-project">
                     <div className="padding-global padding-section">
                         <div className="container-large">
                             <div className="section_header is-project">
                                 <h2 className="section_title heading-style-h1">
-                                    About <span className="text-style-secondary-font">Nashouse</span>
+                                    About <span className="text-style-secondary-font">Altris AI</span>
                                 </h2>
                                 <p className="header-text body-l">
-                                    Nas House is a place where ambitious people come together to
-                                    connect, collaborate, and create. It’s more than just a space—it’s
-                                    a community where you can work, rest, eat, network, and belong all
-                                    under one roof.
+                                    Altris AI is an innovative clinical AI infrastructure platform enabling healthcare providers to deliver advanced diagnostics. They needed strategic market access across MENA to establish institutional partnerships and navigate complex regulatory environments for rapid regional expansion.
                                 </p>
                             </div>
                             <div className="about-project_grid">
-                                <figure className="about-project_figure position-relative overflow-hidden">
-                                    <img
-                                        className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b29cab409c556dcfd37_nashouse-about-1-high.jpg"
-                                        alt="nashouse laptop mockup"
-                                        width={635}
-                                        height={644}
-                                        loading="lazy"
-                                        fetchpriority="low"
-                                        decoding="async"
-                                    />
-                                </figure>
-                                <figure className="about-project_figure position-relative overflow-hidden">
-                                    <img
-                                        className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b53508515b6909d789d_nashouse-about-2-high.jpg"
-                                        alt="nashouse mobile mockup"
-                                        width={635}
-                                        height={644}
-                                        loading="lazy"
-                                        fetchpriority="low"
-                                        decoding="async"
-                                    />
-                                </figure>
+                                {ABOUT_IMAGES.map((image, index) => (
+                                    <AboutImage key={index} {...image} />
+                                ))}
                             </div>
                         </div>
                     </div>
                 </section>
+
+                {/* Solution Section */}
                 <section className="section_solution position-relative">
                     <div className="padding-global">
                         <div className="container-large">
@@ -557,10 +250,7 @@ const ProjectOne = () => {
                                         The <span className="text-style-secondary-font">challenge</span>
                                     </h2>
                                     <p className="project_section_text body-l">
-                                        Designing the Nas House website means creating a space that
-                                        feels welcoming and vibrant, where users can easily explore all
-                                        the ways to connect, work, and grow within a community they’ll
-                                        want to be a part of
+                                        Unlocking MENA healthcare markets for Altris AI meant navigating complex regulatory frameworks, securing ministerial-level endorsements, and establishing credibility with government health institutions and major hospital networks across multiple jurisdictions simultaneously.
                                     </p>
                                 </div>
                                 <div className="project_section_header display-flex">
@@ -568,97 +258,19 @@ const ProjectOne = () => {
                                         The <span className="text-style-secondary-font">solution</span>
                                     </h2>
                                     <p className="project_section_text body-l">
-                                        The solution is to design nashouse website that feels as
-                                        inviting and dynamic as Nas House itself. By focusing on clear
-                                        navigation, engaging visuals, and intuitive features, we’ll
-                                        create an experience that makes it easy for users to discover,
-                                        connect, and engage with the community and opportunities at Nas
-                                        House.
+                                        The solution was to leverage our ministerial network and healthcare relationships to orchestrate high-level introductions across Egypt, UAE, and Saudi Arabia. By facilitating pilot program discussions with ministry decision-makers and coordinating parallel engagement with enterprise hospital groups, we accelerated institutional adoption pathways and established Altris AI as a trusted regional partner.
                                     </p>
                                 </div>
                             </div>
                             <div className="section_header is-center">
                                 <h2 className="section_title heading-style-h1 text-color-alternate">
-                                    The <span className="text-style-secondary-font">Process</span>
+                                    The <span className="text-style-secondary-font">Execution</span>
                                 </h2>
                             </div>
                             <div className="solution_grid">
-                                <div className="solution_card display-vertical">
-                                    <div className="solution_card_top display-flex">
-                                        <div className="solution_card_icon display-flex is-center">
-                                            <img
-                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c57151ca21d031b662d6ea_calender.svg"
-                                                loading="lazy"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="body-l">001</div>
-                                    </div>
-                                    <div className="solution_card_content display-vertical">
-                                        <h3 className="text-color-alternate">Initial Brief</h3>
-                                        <p className="text-size-regular">
-                                            Start by gathering an initial design brief to understand the
-                                            client's aspirations
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="solution_card display-vertical">
-                                    <div className="solution_card_top display-flex">
-                                        <div className="solution_card_icon display-flex is-center">
-                                            <img
-                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c57150a90a95057f29dba9_person.svg"
-                                                loading="lazy"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="body-l">002</div>
-                                    </div>
-                                    <div className="solution_card_content display-vertical">
-                                        <h3 className="text-color-alternate">Questionnaire</h3>
-                                        <p className="text-size-regular">
-                                            Ask insightful questions to clarify project requirements and
-                                            gather valuable insights.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="solution_card display-vertical">
-                                    <div className="solution_card_top display-flex">
-                                        <div className="solution_card_icon display-flex is-center">
-                                            <img
-                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c57150b4de1911f9b773e8_estimate.svg"
-                                                loading="lazy"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="body-l">003</div>
-                                    </div>
-                                    <div className="solution_card_content display-vertical">
-                                        <h3 className="text-color-alternate">Estimate</h3>
-                                        <p className="text-size-regular">
-                                            Provide a transparent project quote that outlines costs and
-                                            timelines, ensuring with the client's budget.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="solution_card display-vertical">
-                                    <div className="solution_card_top display-flex">
-                                        <div className="solution_card_icon display-flex is-center">
-                                            <img
-                                                src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c571504fcf89b38f96ae4c_kickoff.svg"
-                                                loading="lazy"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="body-l">004</div>
-                                    </div>
-                                    <div className="solution_card_content display-vertical">
-                                        <h3 className="text-color-alternate">Project Kick-off</h3>
-                                        <p className="text-size-regular">
-                                            Once the client approves the quote, initiate the project with
-                                            a well-defined plan and open lines of communication.
-                                        </p>
-                                    </div>
-                                </div>
+                                {SOLUTION_CARDS.map((card, index) => (
+                                    <SolutionCard key={index} {...card} />
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -674,22 +286,24 @@ const ProjectOne = () => {
                             width="100%"
                             height="100%"
                             loading="lazy"
-                            fetchpriority="low"
+                            fetchPriority="low"
                             decoding="async"
                         />
                     </picture>
                 </section>
+
+                {/* Style Guide Section */}
                 <section className="section_style-guide">
                     <div className="padding-global padding-section">
                         <div className="container-large">
                             <div className="header_content">
                                 <h1 className="home-header_title">
-                                    <div className="display-inline">Style guide</div>
+                                    <div className="display-inline">Strategic framework</div>
                                 </h1>
                                 <div className="home-header_content-inner display-vertical is-left">
                                     <p className="project_other-text body-l">
-                                        our primary objective is to ensure a consistent and cohesive
-                                        visual and interactive experience across all digital
+                                        our primary objective is to ensure consistent and coordinated
+                                        stakeholder engagement across all ministerial and enterprise
                                         touchpoints.
                                     </p>
                                 </div>
@@ -698,46 +312,50 @@ const ProjectOne = () => {
                                 <img
                                     className="cover-image"
                                     src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b92a6e51e35d4819be6_nashouse-style-guide-high.png"
-                                    alt="Nashouse style guide"
+                                    alt="Altris AI engagement strategy"
                                     width={1290}
                                     height={878}
                                     loading="lazy"
-                                    fetchpriority="low"
+                                    fetchPriority="low"
                                     decoding="async"
                                 />
                             </figure>
                         </div>
                     </div>
                 </section>
+
+                {/* Home Screen Section */}
                 <section className="section_home-screen">
                     <div className="padding-global">
                         <div className="container-large">
                             <div className="section_header is-center">
                                 <h2 className="section_title heading-style-h1">
-                                    <span className="text-style-secondary-font">Home</span> Screen
+                                    <span className="text-style-secondary-font">Stakeholder</span> Mapping
                                 </h2>
                             </div>
                             <figure className="home-screen_media position-relative overflow-hidden">
                                 <img
                                     className="cover-image"
                                     src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63d3d8879041ea3b5686c_nashouse-home-screen-high-min.jpg"
-                                    alt="Nashouse homescreen mockup"
+                                    alt="Altris AI stakeholder network"
                                     width={1290}
                                     height={929}
                                     loading="lazy"
-                                    fetchpriority="low"
+                                    fetchPriority="low"
                                     decoding="async"
                                 />
                             </figure>
                         </div>
                     </div>
                 </section>
+
+                {/* Other Screen Section */}
                 <section className="section_other-screen">
                     <div className="padding-global padding-section">
                         <div className="container-large">
                             <div className="section_header is-center">
                                 <h2 className="section_title heading-style-h1">
-                                    <span className="text-style-secondary-font">Others</span>Screen
+                                    <span className="text-style-secondary-font">Execution</span>Timeline
                                 </h2>
                             </div>
                             <div className="position-relative overflow-hidden">
@@ -753,7 +371,7 @@ const ProjectOne = () => {
                                         width="100%"
                                         height="100%"
                                         loading="lazy"
-                                        fetchpriority="low"
+                                        fetchPriority="low"
                                         decoding="async"
                                     />
                                 </picture>
@@ -761,6 +379,8 @@ const ProjectOne = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Testimonial Slider Section */}
                 <div className="section_testimonial-slider">
                     <div className="padding-global padding-section is-top-0">
                         <div className="container-large">
@@ -779,10 +399,7 @@ const ProjectOne = () => {
                                         alt=""
                                     />
                                     <p className="body-xl text-color-primary">
-                                        Omotive Design Agency did an outstanding job designing the
-                                        websites for Nassummit, Nashouse, Nastravel, and Nasdaily. The
-                                        sites are intuitive, visually engaging, and perfectly aligned
-                                        with our brand. Highly recommend!
+                                        Wasel EBDS opened doors we couldn't access for years. Within 48 hours, we had ministerial meetings scheduled across three countries. Their network across MENA healthcare institutions is unmatched. They don't just connect—they deliver results.
                                     </p>
                                     <div className="client-testimonial-card-footer">
                                         <div className="client-testimonial-card-user">
@@ -791,7 +408,7 @@ const ProjectOne = () => {
                                                     <img
                                                         width={70}
                                                         height={70}
-                                                        alt="nasir hussain"
+                                                        alt="sarah al-mansouri"
                                                         loading="lazy"
                                                         src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bda4143cdb248a8ea2fe9c_user-testimonial-1.png"
                                                         className="client-testimonial-media-image"
@@ -828,10 +445,10 @@ const ProjectOne = () => {
                                             </div>
                                             <div>
                                                 <div className="client-testimonial-card-user-name text-bold">
-                                                    Nuseir Yassin
+                                                    Sarah Al-Mansouri
                                                 </div>
                                                 <div className="client-testimonial-card-user-designation">
-                                                    Founder &amp; CEO at Nas Company
+                                                    CEO, MedTech Solutions MENA
                                                 </div>
                                             </div>
                                         </div>
@@ -847,397 +464,26 @@ const ProjectOne = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Related Projects Section */}
                 <section className="section_related-project">
                     <div className="padding-global padding-section is-top-0">
                         <div className="container-large">
                             <div className="section_header is-center">
                                 <h2 className="section_title heading-style-h1">
-                                    Next <span className="text-style-secondary-font">Projects</span>
+                                    Next <span className="text-style-secondary-font">Deals</span>
                                 </h2>
                             </div>
                             <div className="related-project_grid">
-                                <div className="project_single-item">
-                                    <a
-                                        href="/projects/nashouse"
-                                        aria-current="page"
-                                        className="project_figure position-relative overflow-hidden w-inline-block w--current is-related"
-                                    >
-                                        <img
-                                            className="cover-image"
-                                            src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c5b848efd444c01860932d_next-project-high.jpg"
-                                            alt="omoskillo website mockup"
-                                            width={614}
-                                            height={576}
-                                            loading="lazy"
-                                            fetchpriority="low"
-                                            decoding="async"
-                                        />
-                                    </a>
-                                    <div className="project_content">
-                                        <h3 className="heading-style-h2">
-                                            <div className="display-inline">Omotive helped </div>
-                                            <div className="display-inline text-style-secondary-font">
-                                                Nashouse to redesign their&nbsp;&nbsp;full website
-                                            </div>
-                                        </h3>
-                                        <div
-                                            className="is-magnatic"
-                                            style={{
-                                                willChange: "transform",
-                                                transform:
-                                                    "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                transformStyle: "preserve-3d"
-                                            }}
-                                        >
-                                            <a
-                                                href="/projects/nashouse"
-                                                aria-current="page"
-                                                className="button w-inline-block w--current is-secondary"
-                                            >
-                                                <div>View case study</div>
-                                                <div className="button-hover-bg-two" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="project_single-item">
-                                    <a
-                                        href="/projects/nastravel"
-                                        className="project_figure position-relative overflow-hidden w-inline-block is-related"
-                                    >
-                                        <img
-                                            className="cover-image"
-                                            src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c5b8485b462b3a3a91ebd7_next-project-2-high.jpg"
-                                            alt="omoskillo website mockup"
-                                            width={614}
-                                            height={576}
-                                            loading="lazy"
-                                            fetchpriority="low"
-                                            decoding="async"
-                                        />
-                                    </a>
-                                    <div className="project_content">
-                                        <h3 className="heading-style-h2">
-                                            <div className="display-inline">Omotive helped </div>
-                                            <div className="display-inline text-style-secondary-font">
-                                                Nastravels to redesign their&nbsp;&nbsp;full website
-                                            </div>
-                                        </h3>
-                                        <div
-                                            className="is-magnatic"
-                                            style={{
-                                                willChange: "transform",
-                                                transform:
-                                                    "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                transformStyle: "preserve-3d"
-                                            }}
-                                        >
-                                            <a
-                                                href="/projects/nastravel"
-                                                className="button w-inline-block is-secondary"
-                                            >
-                                                <div>View case study</div>
-                                                <div className="button-hover-bg-two" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                {RELATED_PROJECTS.map((project, index) => (
+                                    <RelatedProjectItem key={index} {...project} />
+                                ))}
                             </div>
                         </div>
                     </div>
                 </section>
             </main>
-            <footer className="footer_component">
-                <div className="padding-global">
-                    <div className="container-large">
-                        <div className="footer_spacer">
-                            <div className="footer_top">
-                                <h2 className="footer_title heading-style-h1 text-color-alternate">
-                                    Let’s create{" "}
-                                    <span className="text-style-secondary-font">
-                                        Something together
-                                    </span>
-                                </h2>
-                                <div className="footer_cta">
-                                    <div
-                                        cl=""
-                                        className="footer_cta_content display-vertical is-left"
-                                    >
-                                        <a
-                                            href="#"
-                                            className="copy-email-wrapper copy-parent w-inline-block"
-                                        >
-                                            <div
-                                                id="textToCopy"
-                                                className="footer_cta_text text-color-alternate"
-                                            >
-                                                mufidul@omotive.co
-                                            </div>
-                                            <div className="copy-button display-vertical  is-center">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 25 24"
-                                                    fill="none"
-                                                    className="copy-button-icon"
-                                                >
-                                                    <path
-                                                        d="M16.5 12.9V17.1C16.5 20.6 15.1 22 11.6 22H7.4C3.9 22 2.5 20.6 2.5 17.1V12.9C2.5 9.4 3.9 8 7.4 8H11.6C15.1 8 16.5 9.4 16.5 12.9Z"
-                                                        stroke="currentColor"
-                                                        strokeWidth="1.5"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        className="bottom-path"
-                                                    />
-                                                    <path
-                                                        d="M22.5 6.9V11.1C22.5 14.6 21.1 16 17.6 16H16.5V12.9C16.5 9.4 15.1 8 11.6 8H8.5V6.9C8.5 3.4 9.9 2 13.4 2H17.6C21.1 2 22.5 3.4 22.5 6.9Z"
-                                                        stroke="currentColor"
-                                                        strokeWidth="1.5"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        className="top-path"
-                                                    />
-                                                </svg>
-                                                <div gradient={1} className="copy-button-overlay" />
-                                            </div>
-                                            <div gradient={1} className="copy-result">
-                                                <div>copied!</div>
-                                            </div>
-                                        </a>
-                                        <div
-                                            className="is-magnatic"
-                                            style={{
-                                                willChange: "transform",
-                                                transform:
-                                                    "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                transformStyle: "preserve-3d"
-                                            }}
-                                        >
-                                            <a
-                                                data-w-id="8bb02b6a-0dfa-c39d-4ebf-2f7056810763"
-                                                href="/book-a-call"
-                                                className="button is-small w-inline-block is-gradient"
-                                            >
-                                                <div className="button-text">Book a free call</div>
-                                                <div
-                                                    className="button-hover-bg"
-                                                    style={{
-                                                        transform:
-                                                            "translate3d(0px, 130%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                        transformStyle: "preserve-3d"
-                                                    }}
-                                                ></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <figure className="footer_cta_figure">
-                                        <img
-                                            className="cover-image"
-                                            src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b42bec2143b3e4e58b5c93_mofidul-tapadar.jpg"
-                                            alt=""
-                                            width={186}
-                                            height={155}
-                                            loading="lazy"
-                                            fetchpriority="low"
-                                            decoding="async"
-                                        />
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="footer_middle">
-                            <div className="footer_middle-left">
-                                <a href="/" className="footer_logo-link w-inline-block">
-                                    <img
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67ac925dc3a152594b6bcc01_logo.svg"
-                                        loading="lazy"
-                                        alt="Omotive Logo"
-                                    />
-                                </a>
-                                <p className="footer_text text-color-alternate">
-                                    Delivering user-centric solutions that&nbsp;&nbsp;combine
-                                    creativity with strategy to drive business growth
-                                </p>
-                            </div>
-                            <div className="footer_middle-right">
-                                <div className="heading-style-h3 text-color-alternate">Socials</div>
-                                <div className="footer_social-link-wrapper">
-                                    <div
-                                        className="is-magnatic"
-                                        style={{
-                                            willChange: "transform",
-                                            transform:
-                                                "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                            transformStyle: "preserve-3d"
-                                        }}
-                                    >
-                                        <a
-                                            data-w-id="1dc7bf29-b59a-c97d-ec7d-00e476be4559"
-                                            href="https://dribbble.com/designopsagency"
-                                            target="_blank"
-                                            className="footer_social-link w-inline-block"
-                                        >
-                                            <div>Dribbble</div>
-                                            <div className="footer_social-overlay" />
-                                            <div
-                                                className="button-hover-bg"
-                                                style={{
-                                                    transform:
-                                                        "translate3d(0px, 130%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                    transformStyle: "preserve-3d"
-                                                }}
-                                            ></div>
-                                        </a>
-                                    </div>
-                                    <div
-                                        className="is-magnatic"
-                                        style={{
-                                            willChange: "transform",
-                                            transform:
-                                                "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                            transformStyle: "preserve-3d"
-                                        }}
-                                    >
-                                        <a
-                                            data-w-id="1dc7bf29-b59a-c97d-ec7d-00e476be455d"
-                                            href="https://www.behance.net/designopsagency"
-                                            target="_blank"
-                                            className="footer_social-link w-inline-block"
-                                        >
-                                            <div>Behance</div>
-                                            <div className="footer_social-overlay" />
-                                            <div
-                                                className="button-hover-bg"
-                                                style={{
-                                                    transform:
-                                                        "translate3d(0px, 130%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                    transformStyle: "preserve-3d"
-                                                }}
-                                            ></div>
-                                        </a>
-                                    </div>
-                                    <div
-                                        className="is-magnatic"
-                                        style={{
-                                            willChange: "transform",
-                                            transform:
-                                                "translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                            transformStyle: "preserve-3d"
-                                        }}
-                                    >
-                                        <a
-                                            data-w-id="1dc7bf29-b59a-c97d-ec7d-00e476be4561"
-                                            href="https://www.linkedin.com/company/omotive-agency/?viewAsMember=true"
-                                            target="_blank"
-                                            className="footer_social-link w-inline-block"
-                                        >
-                                            <div>Linkedin</div>
-                                            <div className="footer_social-overlay" />
-                                            <div
-                                                className="button-hover-bg"
-                                                style={{
-                                                    transform:
-                                                        "translate3d(0px, 130%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                                                    transformStyle: "preserve-3d"
-                                                }}
-                                            ></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="footer_bottom">
-                            <div className="footer_service-menu">
-                                <a
-                                    href="https://clutch.co/profile/omotive#highlights"
-                                    target="_blank"
-                                    className="clutch-link w-inline-block"
-                                >
-                                    <img
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b02ff19b0ad6a3fb5ba114_clutch-logo.svg"
-                                        loading="lazy"
-                                        alt="clutch logo"
-                                    />
-                                </a>
-                                <div className="footer_service-link-wrap">
-                                    <a href="/" className="text-weight-medium text-color-alternate">
-                                        Home
-                                    </a>
-                                    <a href="/about" className="footer_service-link">
-                                        About
-                                    </a>
-                                    <a href="/services" className="footer_service-link">
-                                        Services
-                                    </a>
-                                    <a href="/services" className="footer_service-link">
-                                        Projects
-                                    </a>
-                                    <a href="/contact" className="footer_service-link">
-                                        Contact
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="footer_divider" />
-                            <div className="footer_copyright">
-                                <a href="#" className="download-button w-inline-block">
-                                    <div gradient={1} className="download-button_text">
-                                        Download deck
-                                    </div>
-                                    <img
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d9261eb0261c57f846fabb_arrow-up.svg"
-                                        loading="lazy"
-                                        alt=""
-                                    />
-                                </a>
-                                <div className="footer_copyright-text">Made with Love in NYC ❤</div>
-                                <a href="#" className="back-to-top w-inline-block">
-                                    <div>Back to top</div>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="100%"
-                                        viewBox="0 0 14 14"
-                                        fill="none"
-                                        className="bac-to-top-arrow"
-                                    >
-                                        <path
-                                            d="M11.6199 8.77888L7.81655 4.97555C7.36738 4.52638 6.63238 4.52638 6.18322 4.97555L2.37988 8.77888"
-                                            stroke="currentColor"
-                                            strokeMiterlimit={10}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <picture className="bg-absolute-shape">
-                    <source
-                        srcSet="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f16dc9f1294ba1936b7fc_footer-gradient-bg-shape-mobil.png"
-                        media="(max-width: 375px)"
-                    />
-                    <img
-                        className="cover-image"
-                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f15e0b040e507611785eb_footer-gradient-bg-shape.png"
-                        alt=""
-                        width="100%"
-                        height="100%"
-                        loading="lazy"
-                        fetchpriority="low"
-                        decoding="async"
-                    />
-                </picture>
-                <img
-                    src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f1810b655b374941bb843_footer-pattern.png"
-                    loading="lazy"
-                    sizes="100vw"
-                    srcSet="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f1810b655b374941bb843_footer-pattern-p-500.png 500w, https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f1810b655b374941bb843_footer-pattern-p-800.png 800w, https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f1810b655b374941bb843_footer-pattern-p-1080.png 1080w, https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/682f1810b655b374941bb843_footer-pattern.png 1440w"
-                    alt=""
-                    className="pattern-bg pointer-events-none"
-                />
-            </footer>
         </div>
-
     );
 };
 

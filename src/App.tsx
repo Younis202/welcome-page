@@ -12,12 +12,15 @@ import ServiceThree from "./pages/service-three/Service-three";
 import ProjectOne from "./pages/project-one/Project-one";
 import ProjectTwo from "./pages/project-two/Project-two";
 import BookACall from "./pages/bookPage/book-a-call";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
@@ -33,6 +36,7 @@ const App = () => (
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </QueryClientProvider>
 );
