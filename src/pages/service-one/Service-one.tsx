@@ -282,7 +282,7 @@ const ServiceOne = () => {
                                     <figure className="services_header-figure position-relative overflow-hidden">
                                         <img
                                             className="cover-image"
-                                            src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bede953b2a09cfc2af8fe2_reviewxpo-service-mockup-high.jpg"
+                                            src="https://ik.imagekit.io/ihhlj9kpd/The-Chairman-of-the-Leadership-Council-urges-the-international-community-1536x988.jpg?updatedAt=1767245568995"
                                             alt="Strategic partnership success"
                                             width={874}
                                             height={585}
@@ -405,7 +405,7 @@ const ServiceOne = () => {
                                 >
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bef97e021d2a52a3859858_reviewxpo-showeel-high.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/1766439730720.jpg?updatedAt=1767245568741"
                                         alt="strategic engagement success"
                                         width={614}
                                         height={488}
@@ -526,8 +526,8 @@ const ServiceOne = () => {
                                 >
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c00447170174072cbadcdf_cta-low.webp"
-                                        data-lazy-src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c0044a3edafe371b946e46_cta-high.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/608182597_18371260357095936_8524848515231661972_n.webp?updatedAt=1767245568138"
+                                        data-lazy-src="https://ik.imagekit.io/ihhlj9kpd/608182597_18371260357095936_8524848515231661972_n.webp?updatedAt=1767245568138"
                                         alt="strategic partnership success"
                                         width={614}
                                         height={488}

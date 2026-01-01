@@ -246,7 +246,7 @@ const About = () => {
                                 <figure className="header_media position-relative overflow-hidden">
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b45853da2cccf3e5aa1767_about-hero-high-quality.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg?updatedAt=1767205724949"
                                         alt="Wasel Team"
                                         width={1290}
                                         height={644}
@@ -342,7 +342,7 @@ const About = () => {
                                 <figure className="operation_media position-relative overflow-hidden">
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b4732f3d80550bd7fd61b7_about-work.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/1743566%D8%A7197540.png"
                                         alt=""
                                         width={614}
                                         height={488}

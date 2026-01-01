@@ -277,7 +277,7 @@ const ServiceThree = () => {
                                 <figure className="service_header_media position-relative overflow-hidden">
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b5b3236858ebec79732441_service-slider-2-high.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/638447795819115685-1140x570(1).jpg?updatedAt=1767250568653"
                                         alt="Strategic partnership signing"
                                         width={1290}
                                         height={644}
@@ -329,7 +329,7 @@ const ServiceThree = () => {
                                 >
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d94e5671cd299e19a24dae_service-slider-3-high.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg?updatedAt=1767205724949"
                                         alt="Government relations meeting"
                                         width={614}
                                         height={488}
@@ -452,7 +452,7 @@ const ServiceThree = () => {
                                 >
                                     <img
                                         className="cover-image"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d94e91c8a9cb38c9576b81_service-slider-4-high.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/3.png?updatedAt=1767225413484"
                                         alt="Deal facilitation success"
                                         width={614}
                                         height={488}

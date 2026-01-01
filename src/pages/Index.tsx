@@ -38,8 +38,8 @@ const CLIENT_LOGOS = [
 const HOME_PROJECTS = [
   {
     href: '/projects/altris-ai',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b08fea00250a4417c8fe10_Omoskillo-website-mockup-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b08feb2550411c49ff62b2_Omoskillo-website-mockup-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/GY922u6WkAAMzJC.jpg?updatedAt=1767245593475',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/GY922u6WkAAMzJC.jpg?updatedAt=1767245593475',
     alt: 'altris ai government partnership',
     title: 'Altris AI',
     subtitle: 'MENA Healthcare Expansion',
@@ -47,8 +47,8 @@ const HOME_PROJECTS = [
   },
   {
     href: '/projects/fintech-licensing',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b096e2d2812e66e167f5ae_omostate-application-mockup-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b096e2eca50e5956c77842_omostate-application-mockup-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg?updatedAt=1767205724949',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg?updatedAt=1767205724949',
     alt: 'fintech regulatory approval',
     title: 'FinTech Licensing',
     subtitle: 'Ministry Access & Approval',
@@ -56,8 +56,8 @@ const HOME_PROJECTS = [
   },
   {
     href: '/projects/manufacturing-deal',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b0976a39cf14b1edd4a611_omoskillo-app-design-mockup-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b0976bc569e1e4c9944a00_omoskillo-app-design-mockup-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/IMG-20220823-WA0036-1140x815.jpg',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/IMG-20220823-WA0036-1140x815.jpg',
     alt: 'manufacturing partnership deal',
     title: 'Manufacturing Partnership',
     subtitle: 'Strategic Deal Closure',
@@ -65,8 +65,8 @@ const HOME_PROJECTS = [
   },
   {
     href: '#',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b097fd5aa2c7918f1a89d0_mymenu-clickpro-mockup-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b097fda3b03ecab8bdce3b_mymenu-clickpro-mockup-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/1763054843245.jpg',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/1763054843245.jpg',
     alt: 'government tender success',
     title: 'Government Tender',
     subtitle: 'Procurement Victory',
@@ -81,8 +81,8 @@ const CORE_SERVICES = [
     href: '/services/government-relations',
     isActive: true,
     description: 'Experience <strong>ministerial-level access</strong>, <strong>regulatory navigation</strong>, and <strong>policy influence</strong> tailored to your expansion goals.',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b1f4e6d7d4e41d3a380f52_core-service-1-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b1f4e6db0bda26bd26cacd_core-service-1-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/1766439730720.jpg',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/1766439730720.jpg',
     dataWId: '8b01261a-02a7-00c6-a0f5-03418c16637e'
   },
   {
@@ -91,8 +91,8 @@ const CORE_SERVICES = [
     href: '/services/market-entry',
     isActive: false,
     description: 'Delivering strategic access solutions that combine insider knowledge with execution to accelerate your MENA presence',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706942a9764c6d4d158f2_core-service-mobile-app-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d70694bedede1779d8aa3c_core-service-mobile-app-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/638447795819115685-1140x570(1).jpg',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/638447795819115685-1140x570(1).jpg',
     dataWId: '74b1622e-a2d0-bbf4-0006-e83ceba3ac0f'
   },
   {
@@ -101,8 +101,8 @@ const CORE_SERVICES = [
     href: '/services/strategic-partnerships',
     isActive: false,
     description: 'Delivering high-impact connections that combine relationship capital with strategic alignment to unlock growth',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706c08d1c3060ecb941c7_core-service-web-app-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706c06561d1219bf28746_core-service-web-app-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/Blinken-Abdulrahman-720x480(1).jpg?updatedAt=1767224959544',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/Blinken-Abdulrahman-720x480(1).jpg?updatedAt=1767224959544',
     dataWId: 'c364578e-4cd2-13a0-0ff5-fee5181e4bb7'
   },
   {
@@ -111,8 +111,8 @@ const CORE_SERVICES = [
     href: '/services/deal-facilitation',
     isActive: false,
     description: 'Delivering execution-focused solutions that combine tactical navigation with strategic momentum to close deals',
-    imageLow: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706f0f53741a37050423c_core-service-webflow-low.webp',
-    imageHigh: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706f0a79f0c901c03469c_core-service-webflow-high.jpg',
+    imageLow: 'https://ik.imagekit.io/ihhlj9kpd/Untitled-1200-x-800-px-180.jpg',
+    imageHigh: 'https://ik.imagekit.io/ihhlj9kpd/Untitled-1200-x-800-px-180.jpg',
     dataWId: '4376dfb3-2db8-372e-be2f-c27aa1f8389c'
   }
 ];
@@ -418,18 +418,18 @@ const Index = () => {
                       loop={true}
                       muted={true}
                       playsInline={true}
-                      poster="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg"
+                      poster="https://ik.imagekit.io/ihhlj9kpd/mute%20so-you-can.mp4"
                       className="cover-image"
                     >
                       <source
-                        data-src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg"
+                        data-src="https://ik.imagekit.io/ihhlj9kpd/mute%20so-you-can.mp4"
                         type="video/webm"
-                        src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg"
+                        src="https://ik.imagekit.io/ihhlj9kpd/mute%20so-you-can.mp4"
                       />
                       <source
-                        data-src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg"
+                        data-src="https://ik.imagekit.io/ihhlj9kpd/mute%20so-you-can.mp4"
                         type="video/mp4"
-                        src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg"
+                        src="https://ik.imagekit.io/ihhlj9kpd/mute%20so-you-can.mp4"
                       />
                     </video>
                   </figure>

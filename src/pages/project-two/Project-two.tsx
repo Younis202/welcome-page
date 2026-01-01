@@ -306,19 +306,6 @@ const ProjectTwo = () => {
                                     </p>
                                 </div>
                             </div>
-                            <figure className="style-guide_figure position-relative overflow-hidden position-relative overflow-hidden">
-                                <img
-                                    className="cover-image"
-                                    src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c643f5e2bf042411715e8f_dd-summit-style-guide-low.webp"
-                                    data-lazy-src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c643f5c72944e6ef708a8c_dd-summit-style-guide-high.png"
-                                    alt="Partnership strategy framework"
-                                    width={1290}
-                                    height={878}
-                                    loading="lazy"
-                                    fetchpriority="low"
-                                    decoding="async"
-                                />
-                            </figure>
                         </div>
                     </div>
                 </section>

@@ -17,13 +17,13 @@ const SERVICE_TAGS = [
 
 const ABOUT_IMAGES = [
     {
-        src: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b29cab409c556dcfd37_nashouse-about-1-high.jpg',
+        src: 'https://ik.imagekit.io/ihhlj9kpd/public_79354ead-3466-4624-b0c2-57c8b11425fa.png',
         alt: 'altris ai strategic meeting',
         width: 635,
         height: 644
     },
     {
-        src: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b53508515b6909d789d_nashouse-about-2-high.jpg',
+        src: 'https://ik.imagekit.io/ihhlj9kpd/640.webp',
         alt: 'altris ai government partnership',
         width: 635,
         height: 644
@@ -206,7 +206,7 @@ const ProjectOne = () => {
                             <figure className="header_media position-relative overflow-hidden">
                                 <img
                                     className="cover-image"
-                                    src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63aa16449d54242ee2e26_nashouse-header-high-min.jpg"
+                                    src="https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg?updatedAt=1767205724949"
                                     alt="Altris AI strategic partnership"
                                     width={1290}
                                     height={644}
@@ -308,18 +308,6 @@ const ProjectOne = () => {
                                     </p>
                                 </div>
                             </div>
-                            <figure className="style-guide_figure position-relative overflow-hidden position-relative overflow-hidden">
-                                <img
-                                    className="cover-image"
-                                    src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63b92a6e51e35d4819be6_nashouse-style-guide-high.png"
-                                    alt="Altris AI engagement strategy"
-                                    width={1290}
-                                    height={878}
-                                    loading="lazy"
-                                    fetchPriority="low"
-                                    decoding="async"
-                                />
-                            </figure>
                         </div>
                     </div>
                 </section>
@@ -336,7 +324,7 @@ const ProjectOne = () => {
                             <figure className="home-screen_media position-relative overflow-hidden">
                                 <img
                                     className="cover-image"
-                                    src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63d3d8879041ea3b5686c_nashouse-home-screen-high-min.jpg"
+                                    src="https://ik.imagekit.io/ihhlj9kpd/public_2dcf219e-7fda-4c39-80ea-cc206d64b204.png"
                                     alt="Altris AI stakeholder network"
                                     width={1290}
                                     height={929}
@@ -361,12 +349,12 @@ const ProjectOne = () => {
                             <div className="position-relative overflow-hidden">
                                 <picture className="bg-absolute-shape is-relative">
                                     <source
-                                        srcSet="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63da16dc936a6b8b4a92b_nashouse-otherscreen-high-min.jpg"
+                                        srcSet="https://ik.imagekit.io/ihhlj9kpd/public_8990090a-4cb3-4add-8e6d-6778bc89ba05.png"
                                         media="(max-width: 375px)"
                                     />
                                     <img
                                         className="max-width-full"
-                                        src="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67c63da16dc936a6b8b4a92b_nashouse-otherscreen-high-min.jpg"
+                                        src="https://ik.imagekit.io/ihhlj9kpd/public_17752b70-00a6-44e4-af07-a135ec7656d1.jpg"
                                         alt=""
                                         width="100%"
                                         height="100%"

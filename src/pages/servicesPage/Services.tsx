@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from 'react';
 
 // Data configurations
 const SERVICE_SLIDES = [
-    { id: 1, image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d94e5671cd299e19a24dae_service-slider-3-high.jpg', alt: 'government relations meeting' },
-    { id: 2, image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b5b3236858ebec79732441_service-slider-2-high.jpg', alt: 'strategic partnership signing' },
-    { id: 3, image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d94e5671cd299e19a24dae_service-slider-3-high.jpg', alt: 'ministerial meeting access' },
-    { id: 4, image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d94e91c8a9cb38c9576b81_service-slider-4-high.jpg', alt: 'deal facilitation success' },
-    { id: 5, image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b5b3236858ebec79732441_service-slider-2-high.jpg', alt: '' }
+    { id: 1, image: 'https://ik.imagekit.io/ihhlj9kpd/2023-10-11T164212Z_1493191002_RC2GQ3AEE8Z3_RTRMADP_3_ISRAEL-PALESTINIANS-ARABS-720x480.jpg?updatedAt=1767225115701', alt: 'government relations meeting' },
+    { id: 2, image: 'https://ik.imagekit.io/ihhlj9kpd/stoltenberg_0-1-9.jpg', alt: 'deal facilitation success' },
+    { id: 3, image: 'https://ik.imagekit.io/ihhlj9kpd/cover-lovotti.jpeg', alt: 'strategic partnership signing' },
+    { id: 4, image: 'https://ik.imagekit.io/ihhlj9kpd/future-leaders-1920x1080.jpg', alt: 'ministerial meeting access' },
+    { id: 5, image: 'https://ik.imagekit.io/ihhlj9kpd/3.png?updatedAt=1767225413484', alt: '' }
 ];
 
 const CORE_SERVICES = [
@@ -14,7 +14,7 @@ const CORE_SERVICES = [
         id: '01',
         title: 'Government Relations',
         href: '/services/government-relations',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b1f4e6db0bda26bd26cacd_core-service-1-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/1766439730720.jpg',
         description: 'Delivering ministerial access solutions that combine strategic positioning with execution to unlock regulatory pathways',
         linkText: 'View service details',
         isActive: true,
@@ -24,8 +24,8 @@ const CORE_SERVICES = [
         id: '02',
         title: 'Market Entry Support',
         href: '/services/market-entry',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706942a9764c6d4d158f2_core-service-mobile-app-low.webp',
-        lazyImage: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d70694bedede1779d8aa3c_core-service-mobile-app-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/1766439730764.jpg',
+        lazyImage: 'https://ik.imagekit.io/ihhlj9kpd/1766439730764.jpg',
         description: 'Delivering market access solutions that combine local expertise with strategic networks to accelerate MENA expansion',
         linkText: 'See service details',
         alt: 'market entry support'
@@ -34,8 +34,8 @@ const CORE_SERVICES = [
         id: '03',
         title: 'Strategic Partnerships',
         href: '/services/strategic-partnerships',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706c08d1c3060ecb941c7_core-service-web-app-low.webp',
-        lazyImage: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706c06561d1219bf28746_core-service-web-app-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/Blinken-Abdulrahman-720x480(1).jpg?updatedAt=1767224959544',
+        lazyImage: 'https://ik.imagekit.io/ihhlj9kpd/Blinken-Abdulrahman-720x480(1).jpg?updatedAt=1767224959544',
         description: 'Delivering partnership solutions that combine relationship capital with strategic alignment to create lasting value',
         linkText: 'See service details',
         alt: 'strategic partnership facilitation'
@@ -44,8 +44,8 @@ const CORE_SERVICES = [
         id: '04',
         title: 'Deal Facilitation',
         href: '/services/deal-facilitation',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706f0f53741a37050423c_core-service-webflow-low.webp',
-        lazyImage: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706f0a79f0c901c03469c_core-service-webflow-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/608182597_18371260357095936_8524848515231661972_n.webp',
+        lazyImage: 'https://ik.imagekit.io/ihhlj9kpd/608182597_18371260357095936_8524848515231661972_n.webp',
         description: 'Delivering closure-focused solutions that combine tactical navigation with momentum management to finalize agreements',
         linkText: 'See service details',
         alt: 'deal closure facilitation'

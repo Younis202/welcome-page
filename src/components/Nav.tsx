@@ -10,7 +10,7 @@ const SERVICES = [
         id: '01',
         title: 'Government Relations',
         href: '/services/government-relations',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67b1f4e6db0bda26bd26cacd_core-service-1-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/The-Chairman-of-the-Leadership-Council-urges-the-international-community-1536x988.jpg?updatedAt=1767245568995',
         description: 'Delivering ministerial access solutions that combine strategic positioning with execution to unlock regulatory pathways',
         isActive: true
     },
@@ -18,21 +18,21 @@ const SERVICES = [
         id: '02',
         title: 'Market Entry Support',
         href: '/services/market-entry',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d70694bedede1779d8aa3c_core-service-mobile-app-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/LinkedIn_partnership%202025.jpg?updatedAt=1767246371183',
         description: 'Delivering market access solutions that combine local expertise with strategic networks to accelerate MENA expansion'
     },
     {
         id: '03',
         title: 'Strategic Partnerships',
         href: '/services/strategic-partnerships',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706c06561d1219bf28746_core-service-web-app-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/ge-healthcare-va-tap-doan-fpt-ky-ket-thoa-thuan-hop-tac-chien-luoc.jpg',
         description: 'Delivering partnership solutions that combine relationship capital with strategic alignment to create lasting value'
     },
     {
         id: '04',
         title: 'Deal Facilitation',
         href: '/services/deal-facilitation',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67d706f0a79f0c901c03469c_core-service-webflow-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/1762434324164.jpg',
         description: 'Delivering closure-focused solutions that combine tactical navigation with momentum management to finalize agreements'
     }
 ];

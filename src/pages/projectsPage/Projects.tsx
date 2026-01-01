@@ -40,14 +40,14 @@ const CLIENT_LOGOS = [
 const PROJECTS_GRID_ONE = [
     {
         href: '/projects/altris-ai-mena',
-        imageSrc: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4cd215468e2baaaf8dea_nas-house-work-high.jpg',
+        imageSrc: 'https://ik.imagekit.io/ihhlj9kpd/Blinken-Abdulrahman-720x480(1).jpg?updatedAt=1767224959544',
         imageAlt: 'altris ai government partnership',
         clientName: 'Altris AI',
         dataWId: 'b4f3a605-7f72-be37-28f2-25ea57072743',
     },
     {
         href: '/projects/fintech-licensing',
-        imageSrc: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4d1d544503c3feb896e1_nas-summit-work-high.jpg',
+        imageSrc: 'https://ik.imagekit.io/ihhlj9kpd/608182597_18371260357095936_8524848515231661972_n.webp?updatedAt=1767245568138',
         imageAlt: 'fintech regulatory approval',
         clientName: 'FinTech Solutions',
         dataWId: 'e7a35a53-1750-6700-3378-bd99db11c3f1',
@@ -57,14 +57,14 @@ const PROJECTS_GRID_ONE = [
 const PROJECTS_GRID_TWO = [
     {
         href: '/projects/manufacturing-partnership',
-        imageSrc: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4e22a224221439807852_nas-travel-wok-high.jpg',
+        imageSrc: 'https://ik.imagekit.io/ihhlj9kpd/1743566%D8%A7197540.png?updatedAt=1767246971413',
         imageAlt: 'manufacturing strategic deal',
         clientName: 'Industrial Corp',
         dataWId: 'f63cc83e-e075-ba82-9101-5143d0a8c700',
     },
     {
         href: '/projects/government-tender',
-        imageSrc: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4e664f95d500738d7095_reviewxpo-work-high.jpg',
+        imageSrc: 'https://ik.imagekit.io/ihhlj9kpd/Untitled-1200-x-800-px-180.jpg?updatedAt=1767250699748',
         imageAlt: 'government procurement victory',
         clientName: 'Tech Innovators',
         dataWId: 'bfdf6af8-e698-9772-40a5-a7f0802ad200',
@@ -74,14 +74,14 @@ const PROJECTS_GRID_TWO = [
 const PROJECTS_GRID_THREE = [
     {
         href: '/projects/pharma-expansion',
-        imageSrc: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4eb5fc2dc5f801235abd_nas-daily-work-high.jpg',
+        imageSrc: 'https://ik.imagekit.io/ihhlj9kpd/IMG-20220823-WA0036-1140x815.jpg?updatedAt=1767253797069',
         imageAlt: 'pharmaceutical market entry',
         clientName: 'Pharma Group',
         dataWId: 'fa24c397-1f71-8efa-725a-78ea1bc30004',
     },
     {
         href: '/projects/energy-partnership',
-        imageSrc: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4f10432130b7246ae876_dd-sumit-work-high.jpg',
+        imageSrc: 'https://ik.imagekit.io/ihhlj9kpd/580571850_947569991030788_1390615124700868290_n.jpg?updatedAt=1767205724949',
         imageAlt: 'energy sector strategic deal',
         clientName: 'Energy Ventures',
         dataWId: '0f6e9eb4-48ba-bb05-d214-1e819b417a59',

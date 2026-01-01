@@ -7,7 +7,7 @@ import React from 'react';
 const HEADER_PROJECTS = [
     {
         href: '/projects/altris-ai',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4cd215468e2baaaf8dea_nas-house-work-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/Untitled-1200-x-800-px-180.jpg?updatedAt=1767250699748',
         alt: 'altris ai market entry',
         companyName: 'Altris AI',
         dataWId: null,
@@ -15,28 +15,12 @@ const HEADER_PROJECTS = [
     },
     {
         href: '/projects/fintech-licensing',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4e664f95d500738d7095_reviewxpo-work-high.jpg',
+        image: 'https://ik.imagekit.io/ihhlj9kpd/1762434324164.jpg?updatedAt=1767250698643',
         alt: 'fintech regulatory approval',
         companyName: 'FinTech Solutions',
         dataWId: null,
         magneticTransform: 'translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
     },
-    {
-        href: '/projects/manufacturing-deal',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4e22a224221439807852_nas-travel-wok-high.jpg',
-        alt: 'manufacturing partnership',
-        companyName: 'Industrial Corp',
-        dataWId: '7bf67379-0a92-4766-1bb2-1a0b506e9e06',
-        magneticTransform: 'translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
-    },
-    {
-        href: '/projects/energy-partnership',
-        image: 'https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/67bd4f10432130b7246ae876_dd-sumit-work-high.jpg',
-        alt: 'energy sector deal',
-        companyName: 'Energy Ventures',
-        dataWId: '7bf67379-0a92-4766-1bb2-1a0b506e9e2d',
-        magneticTransform: 'translate3d(0rem, 0rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)'
-    }
 ];
 
 const DESIGN_PROCESS_STEPS = [
