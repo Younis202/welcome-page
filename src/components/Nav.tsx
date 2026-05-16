@@ -108,7 +108,7 @@ const Nav = () => {
                     <div className="nav_wrapper">
                         {/* Logo */}
                         <a href="/" aria-current="page" className="nav_logo-link w-inline-block w--current">
-                            <img src="https://ik.imagekit.io/ihhlj9kpd/Gemini_Generated_Image_5qgeq85qgeq85qge-Photoroom.png?updatedAt=1767203446046" loading="eager" width={124} height={28} alt="Wasel EBDS Logo" className="nav_logo" />
+                            <img src="https://ik.imagekit.io/ihhlj9kpd/Gemini_Generated_Image_5qgeq85qgeq85qge-Photoroom.png?updatedAt=1767203446046" loading="eager" width={224} height={28} alt="Wasel EBDS Logo" className="nav_logo" />
                         </a>
 
                         {/* Desktop Menu */}
